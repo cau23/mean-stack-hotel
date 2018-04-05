@@ -17,7 +17,7 @@ function AuthInterceptor($location, $q, $window, AuthFactory) {
 
 	function response (response) {
 		if (response.status === 200 && $window.sessionStorage.token && !AuthFactory.isLoggedIn) {
-			AuthFactory.isloggedIn = true;
+			AuthFactory.isLoggedIn = true;
 		}
 		if (response.status === 401) {
 			AuthFactory.isLoggedIn = false;
